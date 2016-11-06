@@ -1,0 +1,25 @@
+#knack-body { background: #fff; margin: 0; padding: 0; border: 0; font-family: helvetica, sans-serif; font-size: 13px;}
+#knack-body a { color: #074376; }
+#knack-body h1, #knack-body h2, #knack-body h3, #knack-body h4, #knack-body h5, #knack-body h6 { color: #333;  }
+#knack-body h2 { font-size: 20px; margin: 6px 0 8px; }
+#knack-body h3 { font-size: 16px; margin: 0; }
+#knack-body p.description { margin: 0 0 12px; color: #666; }
+#knack-body .kn-view.kn-info { background-color: #f6f6f6; border-bottom: 1px solid #e4e4e4; color: #555; padding: 6px 24px; margin: 0px 0 16px 0;}
+#knack-body .kn-view { padding: 2px 24px; }
+h1#knack-logo {
+  background-color: #023F74;
+  padding: 4px 24px 0px; 
+  margin: 0;                
+  font-size: 26px; 
+  line-height: 52px;
+}
+h1#knack-logo a { text-decoration: none; color: #fff; }
+h1#knack-logo.logo-img {
+  padding: 10px 20px;
+  line-height: 100%;
+  margin: 0;
+}
+.kn-content, #fancybox-wrap { font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif; font-size: 13px; line-height: 18px; color: #555; -webkit-font-smoothing: antialiased; }
+.kn-message .close { font-family: Arial,sans-serif; }
+.ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 1.1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }

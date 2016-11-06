@@ -1,0 +1,60 @@
+.container {
+	padding: 15px;
+}
+.accordion-title {
+	cursor: pointer;
+}
+.panel-group .panel-item {
+	padding: 10px 20px 10px 20px;
+} 
+.modal-lg {
+	width: 80%;
+}
+
+.nav-pills li {
+	background-color: #023f74;
+	margin-top: 0px!important;
+	/* border-bottom: 1px solid #0b2b41; */
+}
+.nav-pills .sub-li {
+	background-color: #005a91;
+}
+.nav-pills li a{
+	color: white;
+	border-radius: 0px;
+}
+.nav-pills li a:hover, .nav-pills li a:focus {
+	background-color: #03325c;
+}
+
+.datepicker {
+	z-index: 1151 !important;
+}
+
+.err {
+	border: 1px solid red;
+	box-shadow: 0px 0px 4px red;
+}
+
+.row-in-form {
+	padding-top: 10px;
+}
+
+a.list-group-item-menu {
+	color: white;
+	background-color: #023f74;
+	border: 0px;
+}
+a.list-group-item-menu:hover, a.list-group-item-menu:focus {
+	background-color: #03325c;
+	color: white;
+}
+a.list-group-item-menu2 {
+	color: white;
+	background-color: #005a91;
+	border: 0px;
+}
+a.list-group-item-menu2:hover, a.list-group-item-menu2:focus {
+	background-color: #03325c;
+	color: white;
+}

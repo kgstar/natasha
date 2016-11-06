@@ -1,0 +1,42 @@
+
+h1#knack-logo a { color: #fff; }
+#knack-body a { color: #074376; }
+#kn-app-menu ul {
+  background-color: #03325C;
+  border-color: #0B2B41;
+}
+#kn-app-menu li {
+  float: left; list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.kn-content #kn-app-menu a:hover, .kn-content #kn-app-menu .active a {
+  background-color: #002547; 
+}
+.kn-content .kn-button-menu a:hover, .kn-button-menu a:hover, a.kn-button:hover {
+  border: 1px solid #aaa;
+  background-color: #F2F2F2;
+}
+.kn-filter-menu a, .kn-tab-menu a {  
+  padding: 0.4em 1.5em;
+  line-height: 1.8em;
+}
+.kn-content .kn-button-menu a:link, .kn-button-menu a:visited, a.kn-button {   
+  padding: 0.4em 1.2em;
+  line-height: 1.8em;
+}
+.kn-view input[type=submit] {
+  padding: 0.4em 1.2em;
+}
+h1#knack-logo {
+  line-height: 56px;
+}
+.kn-table table th {
+  line-height: 2em;
+  padding: 5px 9px;
+  font-weight: bold;
+  vertical-align: bottom;
+}
+.kn-table tbody td {
+  padding: 10px 9px;
+}

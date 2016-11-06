@@ -1,0 +1,80 @@
+<div ng-controller="SignatureCtrl">
+	<section>
+		<div class="page-header">
+			<h4>Package Settings</h4>
+		</div>
+		<div>
+		<form role="form">
+			<span class="h4">Signature Method : </span>
+			<label class="radio-inline"><input type="radio" ng-click="elem.flag='digital'" name="signature_method" checked />Digital</label>
+			<label class="radio-inline"><input type="radio" ng-click="elem.flag='email'" name="signature_method"/>Email</label>
+			<label class="radio-inline"><input type="radio" ng-click="elem.flag='postal'" name="signature_method"/>Postal</label>
+		</form>
+		</div>
+		<div ng-if="elem.flag=='digital'">
+			<span class="h4">Signer Sequencing : </span>
+			<label class="radio-inline"><input type="radio" name="signer_sequencing"/>Yes</label>
+			<label class="radio-inline"><input type="radio" name="signer_sequencing"/>No</label>
+		</div>
+		<div ng-if="elem.flag=='postal'">
+			<div class="row">
+				<div class="col-md-4"><h4>Delivery Tracking #:</h4></div>
+				<div class="col-md-8"><input class="form-control" type="text" /></div>
+			</div>
+		</div>
+		<div>
+			<h4>Subject Line</h4>
+			<input class="form-control" type="text" />
+		</div>
+		<div>
+			<h4>Message</h4>
+			<textarea class="form-control" rows="5"></textarea>
+		</div>
+		<div>
+			<h4>File</h4>
+			filename.ext
+		</div>
+		<div>
+			<div class="row">
+				<div class="col-md-4">
+					<h4 class="inline">Package Participants</h4>
+				</div>
+				<div class="col-md-4">
+					<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+							Person Search Dropdown
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a dhref="#" target="_self">Signer</a></li>
+							<li><a dhref="#" target="_self">CC</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<input class="btn btn-info inline" type="button" value="Add Participant"/>
+				</div>
+			</div>
+		</div>
+		<div class="alert alert-info">
+			<div class="row">
+				<div class="col-md-1">Seq.#</div>
+				<div class="col-md-3">
+					<select class="form-control">
+						<option value="signer">Signer</option>
+						<option value="cc">CC</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<input class="form-control" type="text" />
+				</div>
+				<div class="col-md-4">
+					<input class="form-control" type="text" />
+				</div>
+			</div>
+		</div>
+		<div>
+			<input class="btn btn-info" type="button" value="Create Package" />
+		</div>
+	</section>
+</div>

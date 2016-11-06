@@ -1,0 +1,92 @@
+<div ng-controller="PersonCtrl">
+	<section>
+		<div class="page-header">
+			<h4>Individual People
+				<button class="btn btn-info" data-toggle="collapse" data-target="#person_form">Add Person</button>
+			</h4>
+		</div>
+		<form id="person_form" name="person_form" class="form-inline collapse" role="form" data-toggle="validator">
+			<div class="row-in-form">
+				<div class="form-group">
+					<input type="text" class="form-control" name="first_name" ng-model="elem.first_name" placeholder="First Name" required/>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="elem.middle_name" placeholder="Middle Name"/>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" name="last_name" ng-model="elem.last_name" placeholder="Last Name" required/>
+				</div>
+			</div>
+			<div class="row-in-form">
+				<div class="form-group">
+					<input type="text" class="form-control" name="preferred_name" ng-model="elem.preferred_name" placeholder="Preferred Name" required/>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" name="date_of_birth" ng-model="elem.date_of_birth" placeholder="Date Of Birth" id="date_of_birth" required/>
+				</div>
+			</div>
+			<div class="panel-heading">
+				<input type="button" class="btn btn-success add-accordion" ng-click="addAccordion();" value="Add"/>
+				<input type="button" class="btn btn-danger cancel-button" ng-click="cancel();" value="Cancel"/>
+			</div>
+		</form> 
+	</section>
+	<section>
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default" ng-repeat="d in data">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="accordion-title" data-toggle="collapse" data-parent="#accordion" data-target="#accordion_{{d.id}}">
+							{{d.first_name}} {{d.middle_name}} {{d.last_name}}&nbsp;&nbsp;&nbsp;&nbsp;{{d.preferred_name}}&nbsp;&nbsp;&nbsp;&nbsp;{{d.date_of_birth}}
+						</a>
+						<span ng-click="data.splice($index, 1);" class="close">&times;</span>
+					</h4>
+				</div>
+				<div id="accordion_{{d.id}}" class="panel-collapse collapse" ng-class="{'in':$index == data.length - 1}">
+					<div class="panel-body">
+						Phone Numbers 
+						<input type="button" class="btn btn-info" ng-click="addPhoneNumber($index);" value="Add Phone Number"/>
+					</div>
+					<div class="panel-item"> 
+						<div class="alert alert-success fade in" ng-repeat="phone in d.phone_numbers" aria-label="close" roll="alert"> 
+							Number : <input type="text" ng-model="phone.phone_number" /> 
+							Type : <select ng-model="phone.phone_type" ng-options="item.id as item.name for item in [{id:'Mobile',name:'Mobile'},{id:'Office',name:'Office'},{id:'Home',name:'Home'},{id:'Other',name:'Other'}]"></select> 
+							Default : 
+							<label><input type="radio" ng-model="phone.phone_default" value=0 /> Yes</label> 
+							<label><input type="radio" ng-model="phone.phone_default" value=1 /> No</label> 
+							<span ng-click="d.phone_numbers.splice($index, 1);" class="close">&times;</span>
+						</div>
+					</div>
+					<div class="panel-item">
+						Email Addresses 
+						<input type="button" class="btn btn-info" ng-click="addEmailAddress($index);" value="Add Email"/>
+					</div>
+					<div class="panel-item">
+						<div class="alert alert-success fade in" ng-repeat="email in d.emails" aria-label="close" roll="alert"> 
+							Email : <input type="email" /> 
+							Default : 
+							<label><input type="radio" ng-model="email.email_default" value=0 /> Yes</label> 
+							<label><input type="radio" ng-model="email.email_default" value=1 /> No</label> 
+							<span ng-click="d.emails.splice($index, 1);" class="close">&times;</span>
+						</div>
+					</div>
+					<div class="panel-item">
+						Corporate / Government Identifiers 
+						<input type="button" class="btn btn-info" ng-click="addCorporate($index);" value="Add Identifier"/>
+					</div>
+					<div class="panel-item">
+						<div class="alert alert-success fade in" ng-repeat="corporate in d.corporates" aria-label="close" roll="alert" id="add_phone_number">
+							Type : 
+							<select ng-model="corporate.type">
+								<option>ABN</option>
+								<option>TFN</option>
+							</select>&nbsp;&nbsp;&nbsp;&nbsp;
+							Identifier : <input type="text" ng-model="corporate.identifier"/>
+							<span ng-click="d.corporates.splice($index, 1);" class="close">&times;</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
